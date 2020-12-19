@@ -30,7 +30,7 @@ namespace AssetBookmarker.Hierarchy
             var mode = (SearchableEditorWindow.SearchMode)typeWindow.GetField("m_SearchMode", BindingFlags.Instance | BindingFlags.NonPublic).GetValue(window);
             var setAll = false;
             typeWindow.GetMethod("SetSearchFilter", BindingFlags.Instance | BindingFlags.NonPublic)
-            .Invoke(window, new object[] { filter, mode, setAll });
+            .Invoke(window, new object[] { filter, mode, setAll, false });
         }
 
         /// <summary>
