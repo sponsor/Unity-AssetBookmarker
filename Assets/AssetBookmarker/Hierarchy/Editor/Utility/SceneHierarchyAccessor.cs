@@ -56,8 +56,11 @@ namespace AssetBookmarker.Hierarchy
             var window = EditorWindow.GetWindow(typeWindow);
 
             // GetRows実行
-            var m_TreeView = typeWindow.GetField("m_TreeView", BindingFlags.Instance | BindingFlags.NonPublic)
-            .GetValue(window);
+            var m_SceneHierarchy = typeWindow.GetField("m_SceneHierarchy", BindingFlags.Instance | BindingFlags.NonPublic)
+                                             .GetValue(window);
+            var sceneHierarchyType = m_SceneHierarchy.GetType();
+            var m_TreeView = sceneHierarchyType.GetField("m_TreeView", BindingFlags.Instance | BindingFlags.NonPublic)
+                                               .GetValue(m_SceneHierarchy);
             var data = m_TreeView.GetType().GetProperty("data", BindingFlags.Instance | BindingFlags.Public)
             .GetValue(m_TreeView, null);
             return (IList<TreeViewItem>)data.GetType().GetMethod("GetRows", BindingFlags.Instance | BindingFlags.Public)
