@@ -1,0 +1,13 @@
+{
+    "name": "com.rngtm.asset-bookmarker",
+    "displayName": "Asset Bookmarker", 
+    "version": "1.0.1",               
+    "unity": "2020.2",
+    "description": "A tool to bookmark Unity assets.",
+    "author": {
+        "name": "r-ngtm",
+        "url": "https://github.com/rngtm"
+    },
+    "dependencies": {
+    }
+}
